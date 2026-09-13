@@ -1,0 +1,33 @@
+services:
+
+  node-app:
+    build:
+      context: ./mnode
+    container_name: node-container
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+
+  angular-app:
+    build:
+      context: ./mangular
+    container_name: angular-container
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+
+  java-app:
+    build:
+      context: ./mjava
+    container_name: java-container
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+
+  python-app:
+    build:
+      context: ./mpython
+    container_name: python-container
+    ports:
+      - "5000:5000"
+    restart: unless-stopped
